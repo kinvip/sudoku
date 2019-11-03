@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>grid</title>
+  <style>
+	* {
+	  margin: 0;
+	  padding: 0;
+	}
+
+	body {
+	  background-color: #fff;
+	}
+
+	.main {
+	  position: relative;
+	  width: 472px;
+	  margin: 50px auto;
+	}
+
+	.main h1 {
+	  margin-bottom: 50px;
+	  text-align: center;
+	}
+
+	.content-top {
+	  display: grid;
+	  grid-template-columns:repeat(9, 50px);
+	  grid-template-rows:repeat(9, 50px);
+	  justify-items: center;
+	  align-items: center;
+	  width: 450px;
+	  border: 1px solid #fff;
+	  padding: 10px;
+	  box-shadow: 0 0 10px #000;
+	}
+	.content-top input {
+	  text-align: center;
+	  font-size: 28px;
+	  width: 50px;
+	  height: 50px;
+	  border: 1px solid #000;
+	  outline: none;
+	}
+	
+	.content-left {
+	  position: absolute;
+	  top: 100px;
+	  left: -210px;
+	  width: 200px;
+	  margin: 30px auto 0;
+	  border: 1px solid #d3d3d3;
+	  border-radius: 10px; 
+	  background-color: #F8F8FF;
+	  color: #000;
+	}
+	
+	.content-left li{
+	  list-style: none;
+	  border-bottom: 1px solid #d3d3d3;
+	  line-height: 30px;
+	  text-align: center;
+	  font-size: 18px;
+	}
+	.content-left li:nth-child(-n+3) {
+	  color: red;
+	}
+
+	.content-right {
+	  position: absolute;
+	  top: 100px;
+	  left: 480px;
+	  width: 200px;
+	  margin: 30px auto 0;
+	}
+	.content-right input, .content-right h3, .content-right button, .content-left p{
+	  outline: none;
+	  float: left;
+	  width: 200px;
+	  height: 50px;
+	  line-height: 50px;
+	  text-align: center;
+	  margin-bottom: 10px;
+	  color: #FFF;
+	  border-radius: 10px;
+	  background-color: #000;
+	}
+	.content-right h3 {
+	  color: #F8F8FF;
+	  background-color: #000;
+	}
+
+	.hide-bg {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  background-color: rgba(255,255,255,0.5);
+	}
+
+	.hide {
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  width: 200px;
+	  height: 200px;
+	  background-color: #F8F8FF;
+	  border-radius: 50%;
+	  box-shadow: 0 0 10px #000;
+	}
+
+	.hide h1 {
+	  line-height: 100px;
+	  color: #fff;
+	  margin: 0;
+	}
+	
+	.hide input.person {
+	  margin-top: 50px;
+	  margin-left: 22px;
+	  width: 150px;
+	}
+
+	.hide input#start {
+	  outline: none;
+	  margin-left: 64px;
+	  margin-top: 34px;
+	  width: 80px;
+	  height: 50px;
+	  border-radius: 20px;
+	}
+
+	.show-personal {
+	  display: none;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  background-color: rgba(255,255,255,0.5);
+	  text-align: center;
+	}
+
+	.resume {
+	  width: 500px;
+	  height: 500px;
+	  background-color: #fff;
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  margin-top: -250px;
+	  margin-left: -250px;
+	  padding: 20px;
+	}
+
+	.close {
+	  float: right;
+	}
+  </style>
+</head>
+<body>
+  <div class="main">
+  	<h1>数独游戏</h1>
+	<div class="content-top" id="numberGo">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	  	<input type="text">
+	</div>
+	<div class="content-left">
+	  <p>排行榜</p>
+	  <ul>
+	  	<li>test1名</li>
+	  	<li>test2名</li>
+	  	<li>test3名</li>
+	  	<li>test4名</li>
+	  	<li>test5名</li>
+	  	<li>test6名</li>
+	  	<li>test7名</li>
+	  	<li>test8名</li>
+	  	<li>test9名</li>
+	  </ul>
+	</div>
+  	<div class="content-right">
+  	  <h3>计时器<span id="timer">00 : 00</span></h3>
+  	  <button onclick="timer()">开始</button>
+  	  <button onclick="endTimer()">暂停</button>
+  	  <input type="button" id="personal" value="玩法">
+	  <input type="button" onclick="gameStart();" value="重来">
+	  <input type="button" onclick="showAnswer()" value="答案">
+    </div>
+  </div>
+    <div class="hide-bg" id="hide">
+	  <div class="hide">
+      <input type="text" class="person" placeholder="请输入姓名">
+	  <input type="button" id="start" value="开始游戏">
+      </div>
+    </div>
+<!-- 开始界面 -->
+  <div class="show-personal" id="showPersonal">
+	<div class="resume">
+	  <button id="close" class="close">关闭</button>
+	  <p>玩法...</p>
+	</div>
+  </div>
+<!-- 开始界面 -->
+  <script>
+    var oHide = document.getElementById('hide');
+    var oStart = document.getElementById('start');
+
+    var oPersonal = document.getElementById('personal');
+    var oShowPersonal = document.getElementById('showPersonal');
+    var oClose = document.getElementById('close');
+
+    var oGeme = document.getElementById('close');
+    var oInput = document.getElementsByTagName('input');
+
+    oStart.onclick = function() {
+      oHide.style.display = 'none';
+      gameStart();
+    }
+ 
+    oPersonal.onclick = function() {
+      oShowPersonal.style.display = 'block';
+    }
+
+    oClose.onclick = function() {
+      oShowPersonal.style.display = 'none';
+    }
+
+    for (var i = 0; i < 3; i++) {
+    	oInput[i].style.backgroundColor = '#d3d3d3';
+    	oInput[i+6].style.backgroundColor = '#d3d3d3';
+    	oInput[i+9].style.backgroundColor = '#d3d3d3';
+    	oInput[i+15].style.backgroundColor = '#d3d3d3';
+    	oInput[i+18].style.backgroundColor = '#d3d3d3';
+    	oInput[i+24].style.backgroundColor = '#d3d3d3';
+    	oInput[i+30].style.backgroundColor = '#d3d3d3';
+    	oInput[i+39].style.backgroundColor = '#d3d3d3';
+    	oInput[i+48].style.backgroundColor = '#d3d3d3';
+    	oInput[i+54].style.backgroundColor = '#d3d3d3';
+    	oInput[i+60].style.backgroundColor = '#d3d3d3';
+    	oInput[i+63].style.backgroundColor = '#d3d3d3';
+    	oInput[i+69].style.backgroundColor = '#d3d3d3';
+    	oInput[i+72].style.backgroundColor = '#d3d3d3';
+    	oInput[i+78].style.backgroundColor = '#d3d3d3';
+    }
+  </script>
+  <script src="sudoku.js"></script>
+</body>
+</html>
